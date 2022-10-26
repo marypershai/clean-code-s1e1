@@ -128,7 +128,9 @@ var taskCompleted=function(){
     var listItem=this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
-
+    console.log(listItem);
+    var label=listItem.querySelector(".task__title");
+    label.classList.add("task__title--complete");
 }
 
 
@@ -160,7 +162,7 @@ addButton.addEventListener("click",ajaxRequest);
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
     console.log("bind list item events");
 //select ListItems children
-    var checkBox=taskListItem.querySelector("input[type=checkbox]");
+    var checkBox=taskListItem.querySelector(".task__checkbox");
     var editButton=taskListItem.querySelector(".button--edit");
     var deleteButton=taskListItem.querySelector(".button--delete");
 
